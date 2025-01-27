@@ -107,6 +107,7 @@
   ### [Extend SaaS Apps](../guides/extensibility/customization)
   ### [Feature Toggles](../guides/extensibility/feature-toggles)
   ### [Reuse & Compose](../guides/extensibility/composition)
+  ### [Plugins](../guides/extensibility/plugins)
 
 ## [Performance](advanced/performance-modeling)
 
