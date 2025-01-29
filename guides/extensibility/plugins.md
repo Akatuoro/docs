@@ -100,4 +100,13 @@ Similar to [domain modeling](../domain-modeling#naming-conventions), we recommen
 
 ## Best Practices
 
-- avoid allowing both a value and a map for an annotation: `@metered` and `@metered: { dimensions: { tenant: 'tenant_ID' } }`
+
+- avoid allowing both a value and a struct for an annotation. For example, `@metered` and `@metered: { dimensions: { tenant: 'tenant_ID' } }`
+  - explanation: the annotations get flattened to
+    ```json
+    "metered": true,
+    "metered.dimensions.tenant": "tenant_ID"
+    ```
+    in the csn.json. This can then not be clearly translated into a structure e.g. for OData... or these cases need to be specially handled.
+- prefer clear, single types (no union types)
+  - reason: union types may not be supported by future compiler features
